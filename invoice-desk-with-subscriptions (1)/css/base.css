@@ -1,0 +1,56 @@
+  :root{
+    --bg:#f3e6cd;
+    --panel:#f8eeda;
+    --paper:#fffbf2;
+    --ink:#2e1a12;
+    --ink-soft:#7a5c47;
+    --ink-faint:#b79c82;
+    --brick:#8a2323;
+    --brick-dark:#5c1414;
+    --brick-light:#b23f3f;
+    --olive:#6e7a3a;
+    --line:#e6cea3;
+    --success:#3f6b4a;
+    --danger:#a1332a;
+    --gold:#b8860b;
+    --gold-bright:#e6ac3f;
+    --gold-pale:#f3d68e;
+    --shadow-sm:0 3px 10px rgba(138,35,35,.12), 0 1px 2px rgba(46,26,18,.08);
+    --shadow-md:0 10px 26px rgba(138,35,35,.18), 0 3px 8px rgba(46,26,18,.10);
+    --shadow-lg:0 22px 50px rgba(46,26,18,.28), 0 6px 18px rgba(138,35,35,.16);
+    --shadow-gold:0 6px 20px rgba(230,172,63,.35);
+    --sidebar-bg:#3a1210;
+    --sidebar-bg-2:#260a08;
+    --sidebar-ink:#f4e6d1;
+    --sidebar-ink-soft:#c9a880;
+    --sidebar-line:#5c2a24;
+    --sidebar-active:#e6ac3f;
+    --radius:10px;
+    --radius-lg:16px;
+    /* Login-gate palette (scoped to #gateScreen only — rest of the app keeps its existing theme) */
+    --gate-burgundy:#7A1F2B;
+    --gate-burgundy-light:#9c3242;
+    --gate-cream:#FFF9F2;
+    --gate-brown:#2B1B17;
+    --gate-gold:#C89B3C;
+  }
+  /* App-wide dark mode — scoped to #appLayout so the login gate (which has
+     its own independent light/dark toggle) is never affected by this. */
+  #appLayout.app-dark{
+    --bg:#150d0a; --panel:#2b1c17; --paper:#241713;
+    --ink:#f4e6d1; --ink-soft:#c9a880; --ink-faint:#8a6350; --line:#4a2f26;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background-color:var(--bg);
+    background-image:
+      radial-gradient(ellipse 900px 500px at 8% -5%, rgba(138,35,35,.08), transparent 60%),
+      radial-gradient(ellipse 700px 500px at 100% 10%, rgba(230,172,63,.10), transparent 55%),
+      radial-gradient(circle at 1px 1px, rgba(122,32,32,.12) 1.2px, transparent 0);
+    background-size: auto, auto, 22px 22px;
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    min-height:100vh;
+  }
+

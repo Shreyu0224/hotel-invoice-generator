@@ -1,0 +1,83 @@
+  /* ================= SUBSCRIPTION SYSTEM ================= */
+
+  /* Topbar status pill, sits next to the session menu */
+  .sub-status-pill{
+    display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:999px;
+    font-size:12px;font-weight:600;letter-spacing:.2px;cursor:pointer;border:1.5px solid var(--line);
+    background:var(--panel);color:var(--ink-soft);white-space:nowrap;
+  }
+  .sub-status-pill:hover{border-color:var(--gold-bright);}
+  .sub-status-pill.sub-trial_active{border-color:var(--gold);color:var(--gold);background:rgba(184,134,11,.08);}
+  .sub-status-pill.sub-premium_active{border-color:var(--success);color:var(--success);background:rgba(63,107,74,.08);}
+  .sub-status-pill.sub-trial_expired,
+  .sub-status-pill.sub-premium_expired,
+  .sub-status-pill.sub-payment_failed{border-color:var(--danger);color:var(--danger);background:rgba(161,51,42,.08);}
+  .sub-status-pill.sub-payment_pending{border-color:var(--gold);color:var(--gold);}
+  .sub-status-pill.sub-legacy{border-color:var(--success);color:var(--success);}
+
+  /* Setup-tab status card badges */
+  .sub-card-row{margin-bottom:8px;}
+  .sub-badge{
+    display:inline-block;padding:5px 12px;border-radius:8px;font-size:12px;font-weight:700;
+    text-transform:uppercase;letter-spacing:.4px;
+  }
+  .sub-badge.sub-trial_active{background:rgba(184,134,11,.12);color:var(--gold);}
+  .sub-badge.sub-premium_active{background:rgba(63,107,74,.14);color:var(--success);}
+  .sub-badge.sub-trial_expired,
+  .sub-badge.sub-premium_expired,
+  .sub-badge.sub-payment_failed{background:rgba(161,51,42,.12);color:var(--danger);}
+  .sub-badge.sub-payment_pending{background:rgba(184,134,11,.12);color:var(--gold);}
+
+  /* Modal overlay */
+  #subscriptionOverlay{
+    position:fixed;inset:0;background:rgba(20,16,12,.6);backdrop-filter:blur(2px);
+    display:none;align-items:center;justify-content:center;z-index:120;padding:20px;
+  }
+  #subscriptionOverlay.show{display:flex;}
+  .subscription-modal{
+    position:relative;background:var(--paper);border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);
+    width:100%;max-width:640px;max-height:88vh;overflow-y:auto;padding:32px 30px;
+  }
+  .subscription-close{
+    position:absolute;top:16px;right:16px;width:32px;height:32px;border-radius:50%;border:none;
+    background:transparent;color:var(--ink-soft);font-size:20px;line-height:1;cursor:pointer;
+  }
+  .subscription-close:hover{background:rgba(138,35,35,.08);color:var(--brick);}
+
+  .subscription-step .eyebrow{margin:0 0 4px;}
+  .subscription-step h2{margin:0 0 6px;font-family:'Playfair Display',serif;}
+  .subscription-step .hint{margin:0 0 18px;}
+
+  #subUpgradeOnlyMsg{
+    background:rgba(161,51,42,.08);border:1px solid rgba(161,51,42,.25);color:var(--danger);
+    border-radius:var(--radius);padding:10px 14px;font-size:13px;margin-bottom:16px;display:none;
+  }
+
+  .subscription-plans{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media (max-width:560px){ .subscription-plans{grid-template-columns:1fr;} }
+
+  .subscription-plan-card{
+    position:relative;border:1.5px solid var(--line);border-radius:var(--radius-lg);padding:20px 18px;
+    background:var(--panel);display:flex;flex-direction:column;
+  }
+  .subscription-plan-card.featured{
+    border-color:var(--gold-bright);box-shadow:var(--shadow-gold);background:linear-gradient(165deg, var(--paper), var(--panel));
+  }
+  .subscription-plan-badge{
+    position:absolute;top:-11px;left:18px;background:var(--gold-bright);color:var(--brick-dark);
+    font-size:10px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;padding:4px 10px;border-radius:999px;
+  }
+  .subscription-plan-name{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--ink);}
+  .subscription-plan-price{font-size:28px;font-weight:800;color:var(--brick);margin:8px 0 2px;}
+  .subscription-plan-price span{font-size:13px;font-weight:600;color:var(--ink-soft);}
+  .subscription-plan-sub{font-size:12px;color:var(--ink-soft);margin-bottom:14px;}
+  .subscription-plan-features{list-style:none;margin:0 0 18px;padding:0;flex:1;}
+  .subscription-plan-features li{font-size:13px;color:var(--ink-soft);padding:5px 0 5px 20px;position:relative;}
+  .subscription-plan-features li::before{
+    content:'✓';position:absolute;left:0;color:var(--success);font-weight:700;
+  }
+
+  .form-error{color:var(--danger);font-size:12.5px;margin:2px 0 10px;display:none;}
+  .form-error.show{display:block;}
+  #subDetailsError{display:none;}
+  #subDetailsError.show{display:block;}
